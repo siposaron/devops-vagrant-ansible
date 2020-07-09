@@ -1,0 +1,12 @@
+---
+
+- name: Install apache
+  apt: name=apache2 state=present
+
+- name: Copy HTML files
+  shell: |
+    if ! [ -L /var/www ]; then
+      rm -rf /var/www
+      ln -fs /vagrant /var/www
+    fi
+  

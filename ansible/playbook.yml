@@ -1,0 +1,15 @@
+---
+
+- name: apache
+  hosts: apache
+  become: yes
+  roles:
+    - general
+    - apache
+
+- name: node
+  hosts: node
+  become: yes
+  roles:
+    - node
+    

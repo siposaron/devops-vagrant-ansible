@@ -1,0 +1,24 @@
+---
+
+- name: Install NodeJS
+  apk: 
+    name: nodejs, npm
+    state: present
+    update_cache: yes
+
+- name: Init Express server
+  shell: 
+    chdir: /vagrant/js
+    cmd: npm install
+    
+- name: Run Express server
+  shell: 
+    chdir: /vagrant/js
+    cmd: npm start
+      
+
+    
+    # cd /vagrant/js
+    # npm install
+    # npm start
+
